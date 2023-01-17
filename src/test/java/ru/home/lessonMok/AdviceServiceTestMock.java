@@ -45,6 +45,9 @@ class AdviceServiceTestMock {
 
         Assertions.assertEquals(1, result.size());
         Assertions.assertEquals(Preference.FOOTBALL, result.iterator().next());
+
+        Mockito.verify(weatherService, Mockito.times(1)).currentWeather();
+        Mockito.verify(preferencesService, Mockito.times(1)).get(ID);
     }
 
     @Test
